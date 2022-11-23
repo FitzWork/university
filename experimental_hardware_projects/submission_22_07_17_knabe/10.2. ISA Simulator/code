@@ -1,0 +1,14 @@
+	EOR	x0, x0, x0
+	EOR	x1, x1, x1
+	EOR	x2, x2, x2
+
+	ADDIS	x0, x0, #5
+
+my_loop:
+	ADDIS	x1, x1, #3
+	ADDIS	x2, x2, #7
+
+	SUBIS	x0, x0, #1
+	B.NE	my_loop
+
+	ADDS	x0, x1, x2

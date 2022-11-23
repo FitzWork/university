@@ -1,0 +1,7 @@
+State2 = ¬State1 * ¬State2 * A + ¬State1 * State2 * ¬A * ¬B1 + State1 * ¬State2 * ¬A * B1 * ¬B2
+State1 = ¬State1 * State2 * A + State1 * ¬State2 * ¬A * ¬B1 * ¬B2 + State1 * ¬State2 * ¬A
+
+Y1 = State1 + State2
+Y2 = State1 * ¬State2 * ¬A
+Y3 = ¬State1 * State2 * B1 + State1 * ¬State2 * B1
+Y4 = State1 * ¬State2 * B2

@@ -1,0 +1,7 @@
+Instruction,Instruction Encoding
+EOR (shifted register),f100 1010 ss0m mmmm iiii iinn nnnd dddd
+ADDS (immediate),f011 0001 0hii iiii iiii iinn nnnd dddd
+SUBS (immediate),f111 0001 0hii iiii iiii iinn nnnd dddd
+B.cond,0101 0100 iiii iiii iiii iiii iii0 cccc
+ADDS (shifted register),f010 1011 ss0m mmmm iiii iinn nnnd dddd
+RET,1101 0110 0101 1111 0000 00nn nnn0 0000

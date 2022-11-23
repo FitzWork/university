@@ -1,0 +1,51 @@
+4‘b0100	4‘b0100	2‘b00 (ADD)
+    unsigned 4 + unsigned 4 = unsigned 8
+    signed 4 + signed 4 = signed -8
+    n = 1: wegen result_msb == 1
+    z = 0: wegen result != 0 
+    c = 0: wegen adder_carry_out == 0
+    v = 1: wegen a_msb == 1, b_msb == 1 und adder_carry_out == 1
+
+4‘b1101	4‘b0011	2‘b00
+    unsigned 13 + unsigned 3 = unsigned 0
+    signed -3 + signed 3 = signed 0
+    n = 0: wegen result_msb == 0
+    z = 1: wegen adder_carry_out == 0
+    c = 1: wegen adder_carry_out == 0
+    v = 0: wegen a_msb == 1 und adder_carry_out == 0
+
+4‘b0100	4‘b1010	2‘b01
+    unsigned 4 - unsigned 6 = unsigned 6
+    signed 4 - signed -2 = signed -2
+    n = 1: wegen result_msb == 1
+    z = 0: wegen result != 0
+    c = 0: wegen adder_carry_out == 0
+    v = 0: wegen b_msb == 1 und adder_carry_out == 0
+
+4‘b0110	4‘b1001	2‘b10
+    unsigned 6 & unsigned 9 = unsigned 0
+    signed 6 & signed -1 = signed 0
+    n = 0: wegen result_msb == 0
+    z = 1: wegen result == 0
+    c = 0: wegen adder_carry_out == 0
+    v = 0: wegen b_msb ==1 und adder_carry_out == 0
+
+4‘b0110	4‘b0101	2‘b11
+    unsigned 6 | unsigned 5 = unsigned 7
+    signed 6 | signed 5 = signed 7
+    n = 0: wegen result_msb == 0
+    z = 0: wegen result != 0
+    c = 0: wegen adder_carry_out == 0
+    v = 0: wegen adder_carry_out == 0
+
+negative: für
+	signed zeigt es an, dass das Ergebnis negativ ist oder ein Überlauf von zwei positiven Zahlen statgefunden hat
+	unsigned zeigt es an, dass das Ergebnis ist größer als die Hälfte oder es gab einen Überlauf und müsste somit als Zweierkomplement betrachtet werden
+zero: für
+	signed und unsigned zeigt es an, dass das berechnete Ergebnis 0 ist
+carry: für
+	signed zeigt es an, dass zwei negative Zahlen addiert wurden oder mit mindestens einer negativen Zahl subtrahiert wurde
+	unsigned zeigt es an, dass zwei entsprechend große Zahlen miteinander addiert wurden, oder durch das subtrahieren gesetzt wurde, obwohl es kein wirklicher Überlauf ist
+overflow: für
+	signed zeigt es an, dass es sich um einen negativen (wenn carry gesetzt ist) oder positiven (wenn negativ gesetzt ist) Überlauf handelt, was genau ist aber von overflow nicht allein ablesbar
+	unsigned zeigt es an, ob es bei der Berechnung zu einem Überlauf gekommen ist oder nicht

@@ -1,0 +1,17 @@
+Current State,Input,,Next State,Output
+waiting for payment,Coin,,payment received,Switch on light to indicate that machine is ready to brew
+waiting for payment,B1,,waiting for payment,None
+waiting for payment,B2,,waiting for payment,None
+waiting for payment,B3,,waiting for payment,None
+payment received,Coin,,overpayment received,Keep light on
+payment received,B1,,waiting for payment,Brew a delicious coffee and switch off light
+payment received,B2,,payment received,None
+payment received,B3,,payment received,None
+overpayment received,Coin,,2x overpayment received,Keep light on
+overpayment received,B1,,overpayment received,Brew a small coffee
+overpayment received,B2,,payment received,Brew a LARGE coffee and switch light off
+overpayment received,B3,,overpayment received,None
+2x overpayment received,Coin,,2x overpayment received,Return one coin
+2x overpayment received,B1,,overpayment received,Brew a small coffee
+2x overpayment received,B2,,payment received,Brew a LARGE coffee
+2x overpayment received,B3,,waiting for payment,Brew a Latte Macchiato and switch light off

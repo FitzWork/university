@@ -1,0 +1,18 @@
+Addition: ADDS (immediate)
+( https://developer.arm.com/documentation/ddi0602/2022-03/Base-Instructions/ADDS--immediate---Add--immediate---setting-flags- )
+
+	32-bit (sf == 0)
+		ADDS <Wd>, <Wn|WSP>, #<imm>{, <shift>}
+	64-bit (sf == 1)
+		ADDS <Xd>, <Xn|SP>, #<imm>{, <shift>}
+
+
+
+Subtraktion: SUBS (immediate)
+( https://developer.arm.com/documentation/ddi0602/2022-03/Base-Instructions/SUBS--immediate---Subtract--immediate---setting-flags- )
+		
+	32-bit (sf == 0)
+		SUBS <Wd>, <Wn|WSP>, #<imm>{, <shift>}
+	64-bit (sf == 1)
+		SUBS <Xd>, <Xn|SP>, #<imm>{, <shift>}
+
